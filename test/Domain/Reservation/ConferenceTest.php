@@ -16,9 +16,6 @@ use RstGroup\ConferenceSystem\Domain\Reservation\Conference;
 
 class ConferenceTest extends \PHPUnit_Framework_TestCase
 {
-    /**
-     * @todo: remove it
-     */
     public function test_example_name()
     {
         $this->markTestSkipped();
