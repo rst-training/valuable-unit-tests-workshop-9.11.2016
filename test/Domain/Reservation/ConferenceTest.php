@@ -25,35 +25,36 @@ class ConferenceTest extends \PHPUnit_Framework_TestCase
     }
 
     public function test_make_reservation_with_seats_collection_param_is_null()
-    public shouldThrowOnNonexistentReservation()
-    {
-    }
-    public shouldThrowOnDoubleCallWithExistingReservation()
-    {
-    }
-    public shouldCancelReservation()
-    {
-    }
-    public shouldRemoveReservationFromWaitList()
-    {
-    }
-    public shouldIncrementSeatsQuantityWithEmptyWaitList()
-    {
-    }
-    public shouldDecrementSeatsQuantityAfterGettingReservationFromWaitingList()
-    {
-    }
-    public shouldMoveReservationFromEmptyList()
-    {
-    }
-    public shouldMoveReservationFromEmptyList()
-    {
-    }
-    /**
-     * @todo: remove it
-     */
-    public function test_example_name()
     {
         $this->markTestSkipped();
     }
+
+    public function shouldThrowOnNonexistentReservation()
+    {
+    }
+
+    public function shouldThrowOnDoubleCallWithExistingReservation()
+    {
+    }
+
+    public function shouldCancelReservation()
+    {
+    }
+
+    public function shouldRemoveReservationFromWaitList()
+    {
+    }
+
+    public function shouldIncrementSeatsQuantityWithEmptyWaitList()
+    {
+    }
+
+    public function shouldDecrementSeatsQuantityAfterGettingReservationFromWaitingList()
+    {
+    }
+
+    public function shouldMoveReservationFromEmptyList()
+    {
+    }
+
 }
