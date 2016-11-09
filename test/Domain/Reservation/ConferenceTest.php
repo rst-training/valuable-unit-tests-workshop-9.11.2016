@@ -19,8 +19,26 @@ class ConferenceTest extends \PHPUnit_Framework_TestCase
     /**
      * @todo: remove it
      */
-    public function test_example_name()
-    {
-        $this->markTestSkipped();
-    }
+    public function shouldHandleOrderIdEquals0()
+    {}
+    public function shouldThrowIfReservatioinExists()
+    {}
+    public function shouldDoNothingInCaseOfEmptySeatsCollection()
+    {}
+    public function shouldNotReserveIfNotEnoughtSeatsAvailable()
+    {}
+    public function shouldReservIfExactNumberOfSeatsAvailable()
+    {}
+    public function shouldReserveOnlySpecificTypeOfSeats()
+    {}
+    public function shouldSubtractReservedSeatsFromAvailable()
+    {}
+    public function shouldDecrementOnlySpecificTypeOfSeatsInCaseOfReservation()
+    {}
+    public function shouldThrowInCaseOfWrongSeatsType()
+    {}
+    public function shouldThrowInCaseOfWrongOrderIdType()
+    {}
+
+
 }
