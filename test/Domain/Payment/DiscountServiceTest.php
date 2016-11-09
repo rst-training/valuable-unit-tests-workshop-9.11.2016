@@ -27,4 +27,23 @@ class DiscountServiceTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals(59.5, $discountService->calculateForSeat($seat, 7), 0.01);
     }
+
+    public function test_atLeast10EarlyBirdsBought_priceDiscountedBy15Percent()
+    {
+        $configuration = $this->getMock(SeatsStrategyConfiguration::class);
+        $discountService = new DiscountService($configuration);
+
+        $configuration->method("isEnabledForSeat")->willReturnCallback([$this, "configCallback"]);
+
+        $seat=new Seat("",10);
+    }
+
+    public function configCallback($strategy, Seat $seat) {
+        if ($strategy instanceof FreeSeatDiscountStrategy) {
+            return false;
+        } else {
+            return true;
+        }
+
+    }
 }

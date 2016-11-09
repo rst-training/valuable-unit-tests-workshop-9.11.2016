@@ -21,9 +21,9 @@ class PricingServiceTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->discountService = $this->getMock(DiscountService::class);
-        $this->conferenceDao = $this->getMock(ConferenceSeatsDao::class);
-        $this->pricingService = new PricingService($this->discountService, $this->conferenceDao);
+//        $this->discountService = $this->getMock(DiscountService::class);
+//        $this->conferenceDao = $this->getMock(ConferenceSeatsDao::class);
+//        $this->pricingService = new PricingService($this->discountService, $this->conferenceDao);
     }
 
     public function test_getPrice_withDiscount_calculatesTotalPriceWithDiscount()
