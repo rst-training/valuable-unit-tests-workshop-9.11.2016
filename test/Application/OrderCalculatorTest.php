@@ -101,7 +101,7 @@ class OrderCalculatorTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($priceA + $priceB, $orderCalculator->calculateTotalCost($seats, $seatsPrice));
     }
 
-    public function test_should_return_price_with_one_discounter_seat_in_order()
+    public function test_should_return_price_with_one_discounted_seat_in_order()
     {
         $priceA = 10;
         $priceDiscountedA = 5;
