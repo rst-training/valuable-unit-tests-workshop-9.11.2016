@@ -6,6 +6,7 @@ use RstGroup\ConferenceSystem\Domain\Payment\PaypalPayments;
 use RstGroup\ConferenceSystem\Domain\Reservation\ConferenceId;
 use RstGroup\ConferenceSystem\Domain\Payment\DiscountService;
 use RstGroup\ConferenceSystem\Domain\Reservation\OrderId;
+use RstGroup\ConferenceSystem\Domain\Reservation\ReservationCostCalculator;
 use RstGroup\ConferenceSystem\Domain\Reservation\ReservationId;
 use RstGroup\ConferenceSystem\Domain\Reservation\Seat;
 use RstGroup\ConferenceSystem\Domain\Reservation\SeatsCollection;
@@ -34,20 +35,11 @@ class RegistrationService
     public function confirmOrder($orderId, $conferenceId)
     {
         $conference = $this->getConferenceRepository()->get(new ConferenceId($conferenceId));
-        $reservation = $conference->getReservations()->get(new ReservationId(new ConferenceId($conferenceId), new OrderId($orderId)));
-
-        $totalCost = 0;
-        $seats = $reservation->getSeats();
-        $seatsPrices = $this->getConferenceDao()->getSeatsPrices($conferenceId);
-
-        foreach ($seats->getAll() as $seat) {
-            $priceForSeat = $seatsPrices[$seat->getType()][0];
-
-            $dicountedPrice = $this->getDiscountService()->calculateForSeat($seat, $priceForSeat);
-            $regularPrice = $priceForSeat * $seat->getQuantity();
-
-            $totalCost += min($dicountedPrice, $regularPrice);
-        }
+        $totalCost = new ReservationCostCalculator(
+                $this -> getConferenceRepository(),
+                $this -> getConferenceDao(),
+                $this->getDiscountService())
+            .calculate($orderId, $conferenceId);
 
         $conference->closeReservationForOrder(new OrderId($orderId));
 
