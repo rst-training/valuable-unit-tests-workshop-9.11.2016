@@ -16,22 +16,22 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class ReservationPayment
 {
-    public function __construct(DiscountService $discountService, ConferenceDao $conferenceDao)
+    public function __construct(DiscountService $discountService, ConferenceSeatsDao $conferenceSeatsDao)
     {
-        $this->conferenceDao = $conferenceDao;
+        $this->conferenceSeatsDao = $conferenceSeatsDao;
         $this->discountService = $discountService;
     }
 
     public function getTotalCost(Reservation $reservation)
     {
         $totalCost = 0;
-        $seatsPrices = $this->conferenceDao->getSeatsPrices($conferenceId);
+        $seatsPrices = $this->conferenceSeatsDao->getSeatsPrices($conferenceId);
         $seats = $reservation->getSeats();
 
         foreach ($seats->getAll() as $seat) {
             $priceForSeat = $seatsPrices[$seat->getType()][0];
 
-            $dicountedPrice = $this->DiscountService->calculateForSeat($seat, $priceForSeat);
+            $dicountedPrice = $this->discountService->calculateForSeat($seat, $priceForSeat);
             $regularPrice = $priceForSeat * $seat->getQuantity();
 
             $totalCost += min($dicountedPrice, $regularPrice);

@@ -7,10 +7,11 @@ use RstGroup\ConferenceSystem\Application\Registration;
 class ReservationPaymentTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     *
+     * @test
      */
     public function should_calculate_total_cost_of_one_seat_reservation()
     {
+        $this->markTestSkipped();
         // given
         // reservation with seats
         $discountServiceMock = $this->getMock(DiscountService::class);
