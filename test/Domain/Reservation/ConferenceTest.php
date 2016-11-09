@@ -27,6 +27,8 @@ class ConferenceTest extends \PHPUnit_Framework_TestCase
     {}
     public function shouldNotReserveIfNotEnoughtSeatsAvailable()
     {}
+    public function shouldAddReservationToWhiteListInCesaOfNotEnoughtSits()
+    {}
     public function shouldReservIfExactNumberOfSeatsAvailable()
     {}
     public function shouldReserveOnlySpecificTypeOfSeats()
