@@ -16,11 +16,39 @@ use RstGroup\ConferenceSystem\Domain\Reservation\Conference;
 
 class ConferenceTest extends \PHPUnit_Framework_TestCase
 {
+
     /**
-     * @todo: remove it
+     * @test
      */
-    public function test_example_name()
-    {
-        $this->markTestSkipped();
+    public function shouldCancelReservartionWhenValidOrderId() {
+
+    }
+
+    /**
+     * @test
+     */
+    public function shouldThrowExceptionWhenInvalidOrderId() {
+
+    }
+
+    /**
+     * @test
+     */
+    public function shouldThrowExceptionWhenReservationNotExistForOrderId() {
+
+    }
+
+    /**
+     * @test
+     */
+    public function shouldRemovedSameSeatsCountAsReservationContains() {
+
+    }
+
+    /**
+     * @test
+     */
+    public function shouldReservedFirstMatchingOrderFromWaitListWhenCancelOrder() {
+
     }
 }
