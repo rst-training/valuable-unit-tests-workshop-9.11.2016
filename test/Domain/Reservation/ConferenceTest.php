@@ -17,10 +17,23 @@ use RstGroup\ConferenceSystem\Domain\Reservation\Conference;
 class ConferenceTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @todo: remove it
+     * @test
      */
-    public function test_example_name()
-    {
+
+
+    public function check_cancel_reservation_for_reservation_order_in_conference(){
+        $this->markTestSkipped();
+    }
+
+    public function check_reservations_quantity_after_cancel_reservation_order_in_conference(){
+        $this->markTestSkipped();
+    }
+
+    public function check_seats_availability_after_cancel_reservation_order_in_conference(){
+        $this->markTestSkipped();
+    }
+
+    public function check_whitelist_after_cancel_reservation_order_in_conference(){
         $this->markTestSkipped();
     }
 }
