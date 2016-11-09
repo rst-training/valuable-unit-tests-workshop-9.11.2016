@@ -17,9 +17,6 @@ class RegistrationServiceTest extends \PHPUnit_Framework_TestCase
         $testedObject = $this -> getMock(RegistrationService::class, array('getConferenceDao', 'getDiscountService', 'getPaypalPayments'));
     }
 
-    /**
-     * @test
-     */
     public function shouldCalculateTotalCostWithDiscountWhenOrderConfirmed() {
         // given
 

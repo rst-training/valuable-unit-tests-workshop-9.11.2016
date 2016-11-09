@@ -9,7 +9,7 @@
 class ReservationCostCalculatorTest
 {
 
-    
+
 
     public function shouldCalculateCost() {
 
