@@ -2,22 +2,21 @@
 
 namespace RstGroup\ConferenceSystem\Domain\Reservation\Test;
 
-use RstGroup\ConferenceSystem\Domain\Reservation\ConferenceId;
-use RstGroup\ConferenceSystem\Domain\Reservation\OrderId;
-use RstGroup\ConferenceSystem\Domain\Reservation\Reservation;
-use RstGroup\ConferenceSystem\Domain\Reservation\ReservationAlreadyExist;
-use RstGroup\ConferenceSystem\Domain\Reservation\ReservationDoesNotExist;
-use RstGroup\ConferenceSystem\Domain\Reservation\ReservationId;
-use RstGroup\ConferenceSystem\Domain\Reservation\ReservationsCollection;
-use RstGroup\ConferenceSystem\Domain\Reservation\Seat;
-use RstGroup\ConferenceSystem\Domain\Reservation\SeatsAvailabilityCollection;
-use RstGroup\ConferenceSystem\Domain\Reservation\SeatsCollection;
-use RstGroup\ConferenceSystem\Domain\Reservation\Conference;
-
 class ConferenceTest extends \PHPUnit_Framework_TestCase
 {
-    public function test_example_name()
+    public function test_make_reservation_for_order_with_proper_params()
     {
         $this->markTestSkipped();
     }
+
+    public function test_make_reservation_for_reservated_order_throw_exception()
+    {
+        $this->markTestSkipped();
+    }
+
+    public function test_make_reservation_add_to_wait_list_when_seats_not_avaliable()
+    {
+        $this->markTestSkipped();
+    }
+
 }
