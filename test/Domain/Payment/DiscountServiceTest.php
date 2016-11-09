@@ -21,10 +21,17 @@ class DiscountServiceTest extends \PHPUnit_Framework_TestCase
         $discountService = new DiscountService($configuration);
         $seat = $this->getMockBuilder(Seat::class)->disableOriginalConstructor()->getMock();
 
-        $configuration->expects($this->at(0))->method('isEnabledForSeat')->with(AtLeastTenEarlyBirdSeatsDiscountStrategy::class)->willReturn(true);
-        $configuration->expects($this->at(1))->method('isEnabledForSeat')->with(FreeSeatDiscountStrategy::class)->willReturn(false);
-        $seat->expects($this->exactly(2))->method('getQuantity')->willReturn(10);
+        $quantity = 10;
+        $price = 7;
+        $map = [
+            ['AtLeastTenEarlyBirdSeatsDiscountStrategy', true],
+            ['FreeSeatDiscountStrategy', false]
+        ];
 
-        $this->assertEquals(59.5, $discountService->calculateForSeat($seat, 7), 0.01);
+        $configuration->method('isEnabledForSeat')->willReturn($this->returnValueMap($map));
+
+        $seat->method('getQuantity')->willReturn($quantity);
+
+        $this->assertEquals(0.85*$quantity*$price, $discountService->calculateForSeat($seat, $price), 0.01);
     }
 }
