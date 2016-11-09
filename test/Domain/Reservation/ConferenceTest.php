@@ -16,6 +16,30 @@ use RstGroup\ConferenceSystem\Domain\Reservation\Conference;
 
 class ConferenceTest extends \PHPUnit_Framework_TestCase
 {
+    public shouldThrowOnNonexistentReservation()
+    {
+    }
+    public shouldThrowOnDoubleCallWithExistingReservation()
+    {
+    }
+    public shouldCancelReservation()
+    {
+    }
+    public shouldRemoveReservationFromWaitList()
+    {
+    }
+    public shouldIncrementSeatsQuantityWithEmptyWaitList()
+    {
+    }
+    public shouldDecrementSeatsQuantityAfterGettingReservationFromWaitingList()
+    {
+    }
+    public shouldMoveReservationFromEmptyList()
+    {
+    }
+    public shouldMoveReservationFromEmptyList()
+    {
+    }
     /**
      * @todo: remove it
      */
