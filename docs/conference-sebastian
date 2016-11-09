@@ -1,0 +1,9 @@
+Anuluja rezerwację jeśli OrderID jest prawidłowy
+
+Rzuca wyjątek jeśli orderID jest nieprawidłowe
+
+Rzuca wyjątek jeśli dla danego orderId nie istnieje rezerwacja
+
+Usuwa tyle samo miejsc ile zawiera rezerwacja
+
+??
