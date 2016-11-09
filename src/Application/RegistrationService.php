@@ -3,6 +3,7 @@
 namespace RstGroup\ConferenceSystem\Application;
 
 use RstGroup\ConferenceSystem\Domain\Payment\PaypalPayments;
+use RstGroup\ConferenceSystem\Application\CalculationService;
 use RstGroup\ConferenceSystem\Domain\Reservation\ConferenceId;
 use RstGroup\ConferenceSystem\Domain\Payment\DiscountService;
 use RstGroup\ConferenceSystem\Domain\Reservation\OrderId;
@@ -39,15 +40,9 @@ class RegistrationService
         $totalCost = 0;
         $seats = $reservation->getSeats();
         $seatsPrices = $this->getConferenceDao()->getSeatsPrices($conferenceId);
+        $discountService = $this->getDiscountService();
 
-        foreach ($seats->getAll() as $seat) {
-            $priceForSeat = $seatsPrices[$seat->getType()][0];
-
-            $dicountedPrice = $this->getDiscountService()->calculateForSeat($seat, $priceForSeat);
-            $regularPrice = $priceForSeat * $seat->getQuantity();
-
-            $totalCost += min($dicountedPrice, $regularPrice);
-        }
+        CalculationService::calculateSeatsPrice($seats, $seatsPrices, $discountService);
 
         $conference->closeReservationForOrder(new OrderId($orderId));
 
