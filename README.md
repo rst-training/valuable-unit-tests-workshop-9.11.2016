@@ -24,3 +24,5 @@ vagrant@vagrant-ubuntu-trusty-64:/vagrant$ composer install
 ```
 vendor/bin/phpunit
 ```
+
+test
