@@ -23,4 +23,21 @@ class ConferenceTest extends \PHPUnit_Framework_TestCase
     {
         $this->markTestSkipped();
     }
+
+    public function test_cancel_reservation_with_one_seat(){
+
+    }
+
+    public function test_cancel_reservation_with_many_seats(){
+
+    }
+
+    public function test_cancel_nonexist_reservation(){
+
+    }
+
+    public function test_cancel_reservation_from_waitList(){
+
+    }
+    
 }
