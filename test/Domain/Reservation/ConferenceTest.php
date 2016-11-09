@@ -19,20 +19,27 @@ class ConferenceTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-
-
     public function check_cancel_reservation_for_reservation_order_in_conference(){
         $this->markTestSkipped();
     }
 
+    /**
+     * @test
+     */
     public function check_reservations_quantity_after_cancel_reservation_order_in_conference(){
         $this->markTestSkipped();
     }
 
+    /**
+     * @test
+     */
     public function check_seats_availability_after_cancel_reservation_order_in_conference(){
         $this->markTestSkipped();
     }
 
+    /**
+     * @test
+     */
     public function check_whitelist_after_cancel_reservation_order_in_conference(){
         $this->markTestSkipped();
     }
