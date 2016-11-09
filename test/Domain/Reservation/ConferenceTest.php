@@ -19,8 +19,19 @@ class ConferenceTest extends \PHPUnit_Framework_TestCase
     /**
      * @todo: remove it
      */
-    public function test_example_name()
+    public function test_makeReservationForOrder_ReservationAlreadyExists_throwsException()
     {
-        $this->markTestSkipped();
+    }
+
+    public function test_makeReservationForOrder_seatsRequestedNotAvailable_putsReservationOnWaitlist()
+    {
+    }
+
+    public function test_makeReservationForOrder_seatsRequestedAvailable_makesReservation()
+    {
+    }
+
+    public function test_makeReservationForOrder_reservationMade_seatAvailabilityChanged()
+    {
     }
 }
