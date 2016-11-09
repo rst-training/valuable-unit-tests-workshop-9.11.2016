@@ -19,4 +19,13 @@ class ConferenceTest extends \PHPUnit_Framework_TestCase
         $this->markTestSkipped();
     }
 
+    public function test_make_reservation_with_orderid_param_is_null()
+    {
+        $this->markTestSkipped();
+    }
+
+    public function test_make_reservation_with_seats_collection_param_is_null()
+    {
+        $this->markTestSkipped();
+    }
 }
